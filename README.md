@@ -29,8 +29,6 @@ To use the Framework you need to add to your web app.
 <script src="folder/app/lib/applicationLayer/Core/Router.js>"></script>
 ```
 
-And understan the widget logic.
-
 ### c. Conversion Markdown to SwiftUI
 
 In order to transform Markdown notes to views in my blog I've written a Python script to convert `.md` to web-SwiftUI `.php` compatible. It will be easy to extend to `.js` for SSR.
