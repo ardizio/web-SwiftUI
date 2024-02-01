@@ -41,18 +41,6 @@ python utilities/markdown_to_webswiftui.py "{PATH_TO_MD_FOLDER}\{FILE_NAME}.md" 
 
 I used iOS 16.0 conventions. Need some updates an class fallbacks if porting to iOS 17.
 
-The available Instances are: `ForEach`, `onTapGesture`, `lineLimit`, `lineSpacing`, `border`, `cornerRadius`, `stack`, `opacity`, `frame(width, height)`, `fill`, `foregroundColor`, ` customText(weight, size, style, color)`, `customPosition(padding, offset)`, `Image`
-
-What's missing: **CoreData Implementation** and  **Advanced Animation Control**. This implementation is not designed to access Apple Swift Kits and APIs. 
-
-# Future Works
-
-- I aim to efficiently compile multiple data classes in a single file, with compilation occurring only on the first occurrence. On subsequent instances, the code should simply append the appropriate class name. This improvement could improve JS render times in big components by a significant 70%.
-
-- Add CoreData via localStorage
-
-- Add More conversion scripts (swiftui to web swiftui) and vice versa. 
-
 This is my folder structure, `SwiftUI` and `Router` are at `folder/app/lib/applicationLayer/Core`.
 ```
 folder/
@@ -73,6 +61,20 @@ folder/
 │  │  ├─ ReusableWidget/
 │  │  ├─ Views/
 ```
+
+The available Instances are: `ForEach`, `onTapGesture`, `lineLimit`, `lineSpacing`, `border`, `cornerRadius`, `stack`, `opacity`, `frame(width, height)`, `fill`, `foregroundColor`, ` customText(weight, size, style, color)`, `customPosition(padding, offset)`, `Image`
+
+What's missing: **CoreData Implementation** and  **Advanced Animation Control**. This implementation is not designed to access Apple Swift Kits and APIs. 
+
+
+
+# Future Works
+
+- I aim to efficiently compile multiple data classes in a single file, with compilation occurring only on the first occurrence. On subsequent instances, the code should simply append the appropriate class name. This improvement could improve JS render times in big components by a significant 70%.
+
+- Add CoreData via localStorage
+
+- Add More conversion scripts (swiftui to web swiftui) and vice versa. 
 
 # License
 JS_SwiftUI is available under the Apache 2.0 license. Unless required by applicable law or agreed to in writing, software distributed under the [License](https://github.com/ardizio/web-SwiftUI/blob/main/LICENSE) is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the LICENSE file for more info.
