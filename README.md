@@ -6,7 +6,7 @@ The goal for this project has been to enable SwiftUI portability to the Web.
 
 I used vanilla Javascript. It solves Performace, Accessibility, Best Practices and SEO.
 
-I'm not porting SwiftUI to web like [Tokamak](https://github.com/TokamakUI/Tokamak), insted I'm using JS to handle everything natively on all browsers.
+I'm not porting SwiftUI to using WebAssembly like [Tokamak](https://github.com/TokamakUI/Tokamak), insted I'm using JS to handle everything natively on all browsers.
 
 ***The Issue***: I did't wanted to rewrite for each platform starting from `.swift`
 
@@ -16,7 +16,9 @@ I'm not porting SwiftUI to web like [Tokamak](https://github.com/TokamakUI/Tokam
 
 ### a. Undestand the Logic
 
-Before digging in the code just read the article in my blog: [Implementing SwiftUI on the Web Part 1](https://www.actum.it/ArticleReaderView/2023-10-13-implementing-swiftui-on-the-web-part-1). There is a general overview of the project and how to use the code. The main webite at that url is using SwiftUI as backbone. So it's working and you will notice that's really fast.
+Before digging in the code just read the article in my blog: [Implementing SwiftUI on the Web Part 1](https://www.actum.it/ArticleReaderView/2023-10-13-implementing-swiftui-on-the-web-part-1). There is a general overview of the project and how to use the code. The main webite at that url is using SwiftUI as backbone. 
+
+It's working and you will notice that's really fast.
 
 After reading you will understand my choices. I have implemented 2 Classes `Router` that handles Application Routing, and `SwiftUI` that handles Styling and Views loading from cache or a determined app web loaction.
 
