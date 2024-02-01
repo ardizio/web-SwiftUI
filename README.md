@@ -77,4 +77,4 @@ folder/
 ```
 
 # License
-JS_SwiftUI is available under the Apache 2.0 license. Unless required by applicable law or agreed to in writing, software distributed under the [License](LICENSE LINK) is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the LICENSE file for more info.
+JS_SwiftUI is available under the Apache 2.0 license. Unless required by applicable law or agreed to in writing, software distributed under the [License](https://github.com/ardizio/web-SwiftUI/blob/main/LICENSE) is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the LICENSE file for more info.
