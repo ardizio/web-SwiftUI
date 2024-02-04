@@ -1,0 +1,238 @@
+#AppLoader {
+    position: absolute;
+    visibility: visible;
+    z-index: 99999;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    background-color: var(--HexCOLOR_Background_0);
+    transition: opacity 0.7s cubic-bezier(0.42, 0, 0.58, 1);
+}
+#AppLoader.LoadingPage {
+    opacity: 1;
+}
+
+/* ZStack, VStack, HStack */
+.ZStack{
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    & > .HStack, > .VStack, > .Circle, > .RoundedRectangle, > .Rectangle, > .Image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.VStack{
+    display: flex;
+    flex-direction: column;
+
+    & .aligmentLeading {
+        text-align: left;
+    }
+    & .alignmentCenter {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    & .alignmentTrailing {
+        text-align: right;
+    } 
+}
+.HStack{
+    display: flex;
+    flex-direction: row;
+}
+.HStack.aligmentTop {
+    align-items: flex-start;
+}
+.HStack.alignmentTextBaseline {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.HStack.alignmentBottom {
+    align-items: flex-end;
+}
+
+/* Scrollview */
+.ScrollView{
+    overflow: auto;
+}
+.VStack.ScrollView {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.HStack.ScrollView {
+    width: 100%;
+}
+
+/* Spacer */
+.Spacer { flex-grow: 1; }
+.HStack:first-child:has(>.Spacer){ width: 100%; }
+.VStack:first-child:has(>.Spacer){ height: 100vh; }  
+
+
+/* Principal Views */
+.Image{
+    max-width: 100vh;
+    width: 100%;
+    border-radius: 0px;
+
+    & > picture{
+        width: 100%;
+        & > img{
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.Image.ScaledToFit > picture > img {
+    width: 100%;
+    height: 100%;
+}
+.Image.aspectRatio-fit > picture > img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto; 
+}
+
+.Circle{
+    height: min(100vw, 100vh);
+    width: min(100vw, 100vh);
+    border-radius: 50%;  
+}
+.Rectangle{
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.UltraThinMaterial  { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.ThinMaterial       { backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+.ThickMaterial      { backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); }
+.UltraThickMaterial { backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); }
+
+.Text{
+    font-family: var(--FontWEIGHT_regular);
+    font-size: 18px;
+    color: var(--Hex_TextCOLOR_main);
+    &.Title {
+        font-family: var(--FontWEIGHT_semibold);
+        font-size: 36px;
+        line-height: 1.2;
+    }
+    &.SubTitle {
+        font-family: var(--FontWEIGHT_semibold);
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    &.Paragraph {
+        font-size: 20px;
+    }
+    &.Caption {
+        font-size: 12px;
+    }
+}
+/* todo: Remove fast css t-XXXX */
+.t-center { text-align: center !important;}
+.t-bold, b, strong { font-family: var(--FontWEIGHT_semibold), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;}
+.t-italic, i{ font-style: italic !important;}
+.t-code{
+    font-family: monospace;
+    font-size: inherit;
+    background: var(--TintedCOLOR_Gray_OverBackground);
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    padding: 0.1rem 0.3rem 0.2rem;
+    border-radius: 0.2rem;
+}
+
+
+
+.displayOnLarge, .displayOnMid, .displayOnSmall{
+    display: none;
+}
+@media only screen and (max-width: 1068px){
+    .displayOnLarge{
+        display: unset;
+    }
+}
+@media only screen and (max-width: 734px){
+    .displayOnMid{
+        display: unset;
+    }
+}
+@media only screen and (max-width: 490px){
+    .displayOnSmall{
+        display: unset;
+    }
+}
+
+
+
+@supports (-webkit-touch-callout: none) {
+    .Image, .Rectangle{
+        height: 100%;
+        width: calc(100vw - constant(safe-area-inset-left) - constant(safe-area-inset-right));
+    }
+    .VStack.ScrollView, .VStack:first-child:has(>.Spacer){
+        height: 100%;
+    }
+    .HStack.ScrollView, .HStack:first-child:has(>.Spacer){
+        width: calc(100vw - constant(safe-area-inset-left) - constant(safe-area-inset-right));
+    }
+    body, #App, #AppLoader,.SPA{
+        height: 100dvh;
+    }
+}
+
+/*
+TO HANDLE IPHONE X and Later Versions 
+                         constant(safe-area-inset-top)
+constant(safe-area-inset-left)              constant(safe-area-inset-right)
+                       constant(safe-area-inset-bottom)
+*/
+
+
+a, .Link{
+    padding: 0px;
+    background: linear-gradient(4deg, #430D83 3.08%, #FEA0F8 96.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Tappable{
+    transition: all .05s ease-in-out;
+    cursor: pointer;
+    will-change: transform;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    will-change: opacity;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+}
+.Tappable:active { transform: scale(0.95);}
+.Tappable:hover { opacity: 1;}
+.TappableUUID{
+    color: transparent;
+    padding: unset;
+    background: unset;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
