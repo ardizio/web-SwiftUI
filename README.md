@@ -24,10 +24,12 @@ After reading you will understand my choices. I have implemented 2 Classes `Rout
 
 ### b. Loading  Classes
 
-To use the Framework you need to add to your web app.
+Import the style classes `class/styling` named `root.css` and `swiftui.css` in this order.
+
+Then to use the SwiftUI-Web Framework you need to add to your web app these scripts:
 
 ``` html
-<script src="folder/app/lib/applicationLayer/Coree/SwiftUI.js>"></script>
+<script src="folder/app/lib/applicationLayer/Core/SwiftUI.js>"></script>
 <script src="folder/app/lib/applicationLayer/Core/Router.js>"></script>
 ```
 
