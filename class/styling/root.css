@@ -1,0 +1,238 @@
+/* -------------- */
+/*FONT FAMILIES*/
+/* -------------- */
+@font-face {
+    font-family: "FontBold";
+    src: url("/src/assets/fonts/Montserrat-Bold.woff2") format("woff2"),
+         url("/src/assets/fonts/Montserrat-Bold.woff") format("woff");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "FontSemiBold";
+    src: url("/src/assets/fonts/Montserrat-SemiBold.woff2") format("woff2"),
+         url("/src/assets/fonts/Montserrat-SemiBold.woff") format("woff");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "FontMedium";
+    src: url("/src/assets/fonts/Montserrat-Medium.woff2") format("woff2"),
+         url("/src/assets/fonts/Montserrat-Medium.woff") format("woff");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "FontRegular";
+    src: url("/src/assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+         url("/src/assets/fonts/Montserrat-Regular.woff") format("woff");
+    font-display: swap;
+} 
+@font-face {
+    font-family: "FontLight";
+    src: url("/src/assets/fonts/Montserrat-Light.woff2") format("woff2"),
+         url("/src/assets/fonts/Montserrat-Light.woff") format("woff");
+    font-display: swap;
+} 
+/* -------------- */
+/*CSS variables*/
+/* -------------- */
+:root {
+    /* FONT */
+    --FontWEIGHT_bold: "FontBold"; 
+    --FontWEIGHT_semibold: "FontSemiBold"; 
+    --FontWEIGHT_medium: "FontMedium";
+    --FontWEIGHT_regular: "FontRegular"; 
+    --FontWEIGHT_light: "FontLight";
+
+    /* BACKGROUND COLORS */
+    --HexCOLOR_Background_0: #000000;
+    --HexCOLOR_Background_1: #1c1c1e;
+    --HexCOLOR_Background_2: #2c2c2d;
+    --HexCOLOR_Background_3: #39383d;
+
+    --HexCOLOR_Background_4: #26252a;
+    --HexCOLOR_Background_5: #3a3a3b;
+
+    /* Home*/
+    --SectionBACKGROUND_normal:   #000000;
+    --SectionBACKGROUND_demi:     #bdbdbd;
+    --SectionBACKGROUND_inverted: #ffffff;
+
+    --SectionFONT_normal_card:    #39383d;
+    --SectionFONT_demi_card:      #d7d7d7;
+    --SectionFONT_inverted_card:  #b6b6b6;
+    
+    --SectionFONT_normal:         #ffffff;
+    --SectionFONT_demi:           #1c1c1e;
+    --SectionFONT_inverted:       #1c1c1e;
+
+    --Filter_SectionFONT_normal: invert(100%) sepia(46%) saturate(2%) hue-rotate(27deg) brightness(115%) contrast(100%);
+    --Filter_SectionFONT_demi:  invert(8%) sepia(4%) saturate(771%) hue-rotate(201deg) brightness(94%) contrast(92%);
+    --Filter_SectionFONT_inverted: invert(8%) sepia(4%) saturate(771%) hue-rotate(201deg) brightness(94%) contrast(92%);
+ 
+    --Hex_TextCOLOR_main: #ffffff;
+    --Tinted_TextCOLOR_main: #ffffff70;
+    --Filter_TextCOLOR_main: invert(100%) sepia(0%) saturate(1786%) hue-rotate(289deg) brightness(110%) contrast(101%);
+
+    --Hex_TextCOLOR_secondary: #a1a1a6;
+    --Tinted_TextCOLOR_secondary: #a1a1a670;
+    --Tinted_TextCOLOR_secondary: invert(70%) sepia(7%) saturate(145%) hue-rotate(202deg) brightness(92%) contrast(90%);
+
+    --Hex_TextCOLOR_heading: #ffffff;
+    --Tinted_TextCOLOR_heading: #ffffff70;
+    --Filter_TextCOLOR_heading: invert(100%) sepia(0%) saturate(1786%) hue-rotate(289deg) brightness(110%) contrast(101%);
+
+    --Hex_TextCOLOR_tertiary: #4c4c4c; 
+    --Tinted_TextCOLOR_heading: #4c4c4c70;
+    --Filter_TextCOLOR_heading: invert(29%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(95%) contrast(89%);
+
+
+    --HexCOLOR_Gray_OverBackground: #46464a;
+    --TintedCOLOR_Gray_OverBackground: #46464a70;
+    --FilterCOLOR_Gray_OverBackground: invert(27%) sepia(5%) saturate(424%) hue-rotate(202deg) brightness(92%) contrast(90%);
+
+    --HexCOLOR_Gray_OverBackground_2: #5a5a5f;
+    --TintedCOLOR_Gray_OverBackground_2: #5a5a5f70;
+    --FilterCOLOR_Gray_OverBackground_2: invert(34%) sepia(1%) saturate(2212%) hue-rotate(202deg) brightness(94%) contrast(81%);
+
+    /* Footer On White START*/
+    --HexCOLOR_Footer_Background: #f5f5f7;
+    --FilterFOOTER_Background: invert(100%) sepia(9%) saturate(1512%) hue-rotate(180deg) brightness(100%) contrast(94%);
+    --HexCOLOR_Footer_Border: #e6e6ea;
+    --FilterFOOTER_Border: invert(94%) sepia(10%) saturate(69%) hue-rotate(202deg) brightness(86%) contrast(100%);
+    --HexCOLOR_Footer_Main: #6e6e73;
+    --FilterFOOTER_Main: invert(44%) sepia(3%) saturate(484%) hue-rotate(201deg) brightness(95%) contrast(87%);
+    --HexCOLOR_Footer_Link: #424245;
+    --FilterFOOTER_Link: invert(23%) sepia(6%) saturate(285%) hue-rotate(202deg) brightness(98%) contrast(88%);
+    --HexCOLOR_Footer_Heading: #1d1d1f;
+    --FilterFOOTER_Heading:  invert(8%) sepia(6%) saturate(599%) hue-rotate(202deg) brightness(98%) contrast(91%);
+    --HexCOLOR_Footer_Bold: #000000;
+    --FilterFOOTER_Bold: invert(0%) sepia(84%) saturate(7500%) hue-rotate(207deg) brightness(113%) contrast(113%);
+    /* Footer On White END*/
+
+    --ContrastBoldParagraph: #86868b;
+    --ContrastBoldParagraphImportant: #1d1d1f;
+    
+    --FilterCOLOR_White: invert(100%) sepia(0%) saturate(0%) hue-rotate(123deg) brightness(101%) contrast(104%);
+
+    /* SYSTEM COLORS Dark/Light */
+    --HexCOLOR_Teal: #64d2ff;
+    --TintedCOLOR_Teal: #64d2ff35;
+    --FilterCOLOR_Teal: invert(72%) sepia(37%) saturate(829%) hue-rotate(167deg) brightness(101%) contrast(101%);
+    --HexCOLOR_Blue: #0084ff;
+    --TintedCOLOR_Blue: #0084ff35;
+    --FilterCOLOR_Blue: invert(47%) sepia(53%) saturate(7322%) hue-rotate(195deg) brightness(103%) contrast(105%);
+    --HexCOLOR_Indigo: #5e5ce6;
+    --TintedCOLOR_Indigo: #5e5ce635;
+    --FilterCOLOR_Indigo: invert(42%) sepia(84%) saturate(4571%) hue-rotate(230deg) brightness(94%) contrast(90%);
+    --HexCOLOR_Purple: #bf28f2;
+    --TintedCOLOR_Purple: #bf28f235;
+    --FilterCOLOR_Purple: invert(17%) sepia(88%) saturate(4947%) hue-rotate(280deg) brightness(110%) contrast(90%);
+    --HexCOLOR_Pink: #ff375f;
+    --TintedCOLOR_Pink: #ff375f35;
+    --FilterCOLOR_Pink: invert(36%) sepia(37%) saturate(6420%) hue-rotate(329deg) brightness(105%) contrast(101%);
+    --HexCOLOR_Red: #ff453a;
+    --TintedCOLOR_Red: #ff453a35;
+    --FilterCOLOR_Red: invert(33%) sepia(73%) saturate(1462%) hue-rotate(334deg) brightness(101%) contrast(103%);
+    --HexCOLOR_Orange: #ff9f0a;
+    --TintedCOLOR_Orange: #ff9f0a35;
+    --FilterCOLOR_Orange: invert(80%) sepia(36%) saturate(6698%) hue-rotate(354deg) brightness(104%) contrast(101%);
+    --HexCOLOR_Yellow: #ffd60a;
+    --TintedCOLOR_Yellow: #ffd60a35;
+    --FilterCOLOR_Yellow: invert(76%) sepia(96%) saturate(863%) hue-rotate(350deg) brightness(102%) contrast(101%);
+    --HexCOLOR_Green: #30d158;
+    --TintedCOLOR_Green: #30d15835;
+    --FilterCOLOR_Green: invert(62%) sepia(94%) saturate(407%) hue-rotate(79deg) brightness(93%) contrast(86%);
+
+    --HexHighlight: #5a4f00;
+    --HexLightGray: #2b2b2b;
+    --HexGray: #60606b;
+    --HexBlue: #1274e0;
+    --HexDestructive: #b51313;
+    --HexSuccess: #10c142;
+
+    /* Z-INDEX */
+    --ZINDEX_Deep_0:    -999999;
+    --ZINDEX_Default_1:       1;
+    --ZINDEX_Masked_2:      100;
+    --ZINDEX_Mask_3:        200;
+    --ZINDEX_Sticky_4:      300;
+    --ZINDEX_Header_5:      400;
+    --ZINDEX_Toast_6:       500;
+    --ZINDEX_Dropdown_7:    600;
+    --ZINDEX_Overlay_8:     700;
+    --ZINDEX_Spinner_9:     800;
+    --ZINDEX_Modal_10:      900;
+    --ZINDEX_Popup_11:      950;
+    --ZINDEX_Loading_12:    999;
+
+    /* Safe Area */
+    --sat: env(safe-area-inset-top, 20px);
+    --sar: env(safe-area-inset-right, 20px);
+    --sab: env(safe-area-inset-bottom, 20px); /* THIS ONE GETS US THE HOME BAR HEIGHT */
+    --sal: env(safe-area-inset-left, 20px);
+}
+
+/* --------------- */
+/* utility classes */
+/* --------------- */
+.Hide{ display: none !important; }
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, output, section, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML, BODY*/
+html,body{
+    -webkit-overflow-scrolling : touch !important;
+    overflow: auto !important;
+    height: 100% !important;
+    line-height: 1.50;
+}
+body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+    appearance:none;
+    outline: none;
+    font-size: 1rem;
+    font-family: var(--FontWEIGHT_regular), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    background-color:var(--HexCOLOR_Background_0);
+    color: var(--Hex_TextCOLOR_main);
+}
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+} 
+body.LoadingPage{
+    cursor: wait;
+}
+/* APP */
+#App{
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    width:100vw;
+    height:100vh;
+    visibility:visible;
+    opacity: 1;
+    transition:visibility 0.15s linear,opacity 0.15s linear;
+}
+@media only screen and (orientation : landscape){
+    #App{   
+        width:calc(100vw - env(safe-area-inset-right) - env(safe-area-inset-left));
+    }
+}
+/* PRELOAD */
+#AppLoader{
+    width:100vw;
+    position:initial;
+    background-color:var(--HexCOLOR_Background_0);
+    z-index: var(--ZINDEX_Loading_12);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.15s linear,opacity 0.15s linear;
+}
+.FadeOutOnLoad{
+    opacity: 0px !important;
+    visibility: hidden !important;
+}
